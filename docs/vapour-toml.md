@@ -1,5 +1,25 @@
 # `vapour.toml`
 
+## Planned build configuration
+
+**Status: planned** for a future release. The [build adapter PR](https://github.com/vapour-computer/vapour-cli/pull/1)
+is source preview, not a released CLI guarantee.
+
+```text
+[build]
+command = "auto"          # auto | custom | none
+dir = "build/web"         # exporter output directory
+boot = ["index.html", "*.js", "*.wasm", "*.pck"]
+split_warn_mib = 1024     # warn above this size; does not raise engine limits
+# custom mode also supplies args = ["exporter", "--web"]
+```
+
+Auto selects the project engine. None validates existing output; custom runs an
+executable/argv without a shell. Boot overrides replace engine defaults; globs
+use Go filepath.Match (`*` does not cross directories; no recursive `**`).
+The preview writes `.vapour/build.json`; integration with chunk publish follows
+separately. See the [large-game plan](large-games.md).
+
 Lives in your game folder. `vapour create` writes it for you.
 
 ```toml

@@ -1,5 +1,20 @@
 # Bevy (Rust)
 
+## Planned automated build and lazy assets
+
+**Status: planned** for release; [adapter source preview](https://github.com/vapour-computer/vapour-cli/pull/1).
+`vapour build` uses installed Cargo with wasm32-unknown-unknown, wasm-bindgen
+`--target web`, and optional wasm-opt; generates index.html and copies assets/.
+Install a wasm-bindgen CLI matching the dependency in your lockfile. The preview
+requires one binary in the root package; use custom mode for workspaces.
+Tools/targets are checked, never installed automatically.
+
+HTML/JS/WASM are boot files; assets/ is lazy metadata. Split large scenes and
+asset archives, load only first-scene handles through AssetServer, and drop
+unused handles to permit unloading. Relative URLs must work below the game's
+play path. An engine can still request all lazy assets immediately; measure its
+actual behavior. Warn above 1 GiB/file. See [large games](../large-games.md).
+
 Bevy targets the browser through WebAssembly. [Trunk](https://trunkrs.dev) is the easiest way to produce an `index.html`.
 
 ## Export

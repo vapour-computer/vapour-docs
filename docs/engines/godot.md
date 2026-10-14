@@ -1,5 +1,21 @@
 # Godot
 
+## Planned automated build and split packs
+
+**Status: planned** for release; [adapter source preview](https://github.com/vapour-computer/vapour-cli/pull/1).
+`vapour build` checks an installed Godot 4 editor (`GODOT` override), a preset
+named Web and matching export templates, imports headlessly and exports Web.
+The default boot set is HTML, JavaScript, WASM and the main PCK. Compatibility is
+required for these Web experiments; changing renderer does not guarantee visual
+parity with Forward+. The CLI does not install tools/templates.
+
+Warn above 1 GiB per file. Keep first-frame resources in the main pack; export
+optional levels/content as separate PCKs and load them on demand using
+`ProjectSettings.load_resource_pack` after downloading/mounting them using your
+web-compatible loader. Avoid loading all packs before first frame. Test paths,
+resource dependencies and memory on target browsers. Delivery chunking alone
+does not make a monolithic PCK memory-safe. See [large games](../large-games.md).
+
 Godot 4 exports to the browser with its built-in Web export.
 
 ## Export
