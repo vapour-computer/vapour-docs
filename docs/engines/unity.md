@@ -20,8 +20,9 @@ Large delivery quotas do not remove WASM limits. See [large games](../large-game
 ## Export
 
 1. **File → Build Profiles → Web**, then **Switch Profile**.
-2. In **Player Settings → Publishing Settings**, set **Compression Format** to *Disabled* or *Gzip*, and turn on
-   **Decompression Fallback**. This makes the build work no matter how it is served.
+2. In **Player Settings → Publishing Settings**, use **Brotli** (or *Gzip*) and turn on
+   **Decompression Fallback** for compatibility while serving paths are still rolling out.
+   Do not assume every host automatically sends correct `Content-Encoding` yet.
 3. **Build** into `build/web/`. The folder must contain `index.html` and a `Build/` folder.
 4. `vapour publish`
 

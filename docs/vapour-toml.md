@@ -12,6 +12,17 @@ dir = "build/web"         # exporter output directory
 boot = ["index.html", "*.js", "*.wasm", "*.pck"]
 split_warn_mib = 1024     # warn above this size; does not raise engine limits
 # custom mode also supplies args = ["exporter", "--web"]
+
+[runtime]
+threads = false
+webgpu = false
+coep = "require-corp"     # require-corp | credentialless
+entry = "index.html"
+
+[mobile]
+orientation = "any"       # any | landscape | portrait
+render_scale = 1.0         # phone-only: 0.25..1.0 DPR multiplier
+max_dpr = 2.0              # optional phone-only DPR cap
 ```
 
 Auto selects the project engine. None validates existing output; custom runs an
@@ -32,6 +43,16 @@ version = "0.1.0"   # letters, digits and . + _ -
 
 [build]
 dir = "build/web"   # your web export folder, or a path to a .zip
+
+[runtime]
+threads = false
+webgpu = false
+coep = "require-corp"
+entry = "index.html"
+
+[mobile]
+orientation = "any"
+# render_scale/max_dpr are optional
 
 [store]
 page = "store/page.json"       # JSON template: details, media files, layout
