@@ -34,3 +34,8 @@ godot --headless --export-release "Web" build/web/index.html
 ```
 
 C# (.NET) Godot projects cannot export to the web yet. Use GDScript.
+
+## Try it with the sample
+
+[`samples/godot-hello`](../../samples/godot-hello) is a tiny Godot 4 project with a Web export preset already set up
+(Compatibility renderer, no threads). Open it in Godot, or export it headless as shown above, then `vapour publish`.
