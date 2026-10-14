@@ -38,6 +38,11 @@ vapour create "My Game" --engine godot --from https://github.com/you/your-godot-
 
 ## 4. Export for web
 
+**Status: planned:** a future `vapour build` will automate Godot, Unity and Bevy
+exports using your installed tools. The current manual steps below remain valid.
+See [build configuration](vapour-toml.md) and [large-game delivery](large-games.md)
+before relying on unreleased chunk uploads or higher quotas.
+
 Follow your engine's guide ([Godot](engines/godot.md), [Unity](engines/unity.md), [Bevy](engines/bevy.md)) and export into
 `build/web/`. The folder must contain `index.html`.
 
