@@ -31,6 +31,9 @@ use Go filepath.Match (`*` does not cross directories; no recursive `**`).
 The preview writes `.vapour/build.json`; integration with chunk publish follows
 separately. See the [large-game plan](large-games.md).
 
+`runtime.coep = "credentialless"` is preview-only until the storefront/player
+runtime ships per-game COEP routing on production.
+
 Lives in your game folder. `vapour create` writes it for you.
 
 ```toml
