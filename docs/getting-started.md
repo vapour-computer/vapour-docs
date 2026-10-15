@@ -46,6 +46,9 @@ before relying on unreleased chunk uploads or higher quotas.
 Follow your engine's guide ([Godot](engines/godot.md), [Unity](engines/unity.md), [Bevy](engines/bevy.md)) and export into
 `build/web/`. The folder must contain `index.html`.
 
+Optional runtime tuning lives in `vapour.toml` under `[runtime]` and `[mobile]`
+(threads/WebGPU/COEP entry path, and phone orientation/downscale hints).
+
 ## 5. Publish
 
 ```sh

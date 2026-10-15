@@ -41,6 +41,14 @@ version = "0.1.0"
 
 [build]
 dir = "build/web"
+
+[runtime]
+threads = false
+coep = "require-corp"
+
+[mobile]
+orientation = "landscape" # optional
+render_scale = 0.75        # optional phone-only downscale
 ```
 
 ## Headless export (for CI)

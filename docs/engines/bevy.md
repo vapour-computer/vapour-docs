@@ -46,4 +46,12 @@ version = "0.1.0"
 
 [build]
 dir = "build/web"
+
+[runtime]
+webgpu = false
+coep = "require-corp"
+
+[mobile]
+orientation = "landscape" # optional
+render_scale = 0.8         # optional phone-only downscale
 ```
